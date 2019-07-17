@@ -1,9 +1,10 @@
-import getConfig from 'next/config';
-
-console.log('publicRuntimeConfig', getConfig().publicRuntimeConfig);
+import thing from '../lib/createThing';
 
 const Index = () => (
-  <div>Welcome to nextjs-9-build-repro</div>
+  <div>{`Thing: ${thing}`}</div>
 );
+
+// Arbitrarily disable prender for example purposes.
+Index.getInitialProps = () => ({ blah: 'blah' });
 
 export default Index;
